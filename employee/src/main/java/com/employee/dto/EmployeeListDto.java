@@ -12,5 +12,5 @@ public class EmployeeListDto {
   private String Name;
   private String EmailId;
   private Address Address;
-  private Date DOB;
+  private String DOB;
 }

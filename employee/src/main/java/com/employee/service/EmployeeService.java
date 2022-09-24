@@ -10,4 +10,7 @@ public interface EmployeeService {
 
   public List<Employee> getEmployeeList();
 
+  Employee checkUser(String userId, String password);
+
+  public List<Employee> getAllEmailId(String dob);
 }

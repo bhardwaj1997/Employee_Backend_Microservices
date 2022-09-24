@@ -27,20 +27,29 @@ public class Employee {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "ID")
   private int id;
+
   @Column(name = "FirstName")
   private String firstName;
-  @Column(name="LastName")
+
+  @Column(name = "LastName")
   private String lastName;
+
   @Column(name = "DOB")
-  private Date dob;
-  @Column(name = "EmailID")
-  private String emailId ;
+  private String dob;
+
+  @Column(name = "emailid")
+  private String emailId;
+
   @Column(name = "MobileNumber")
   private Integer mobileNo;
+
   @Column(name = "Gender")
   private Character gender;
+
   @OneToOne(cascade = CascadeType.ALL)
   @JoinColumn(name = "AddressId")
-  private Address address ;
+  private Address address;
 
+  @Column(name = "password")
+  private String password;
 }

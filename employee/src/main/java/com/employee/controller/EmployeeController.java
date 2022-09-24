@@ -1,6 +1,7 @@
 package com.employee.controller;
 
 import com.employee.model.Employee;
+import com.employee.model.Login;
 import com.employee.service.EmployeeService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,11 @@ public class EmployeeController {
 
   @Autowired private EmployeeService employeeService;
 
+  @GetMapping("/checkUser")
+  public ResponseEntity<Employee> checkUserExist(@RequestBody Login login){
+    Employee emp = employeeService.checkUser(login.getUserId(),login.getPassword());
+    return new ResponseEntity<Employee>(emp, HttpStatus.OK);
+  }
   @GetMapping("/getEmployeeList")
   public ResponseEntity<List<Employee>> getAllEmployees() {
     return new ResponseEntity<List<Employee>>(employeeService.getEmployeeList(), HttpStatus.OK);
